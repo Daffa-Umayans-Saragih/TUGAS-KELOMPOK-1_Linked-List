@@ -10,7 +10,7 @@ struct Node {
 };
 
 // Pointer head (awal linked list)
-    Node *head = NULL;
+Node *first = NULL;
 
 
 
@@ -39,7 +39,7 @@ void NodeAwal() {
 // =====================
 
 void display() {
-    Node *temp = head;
+    Node *temp = first;
 
     cout << "Isi Linked List: "<<endl;
     while (temp != NULL) {
@@ -50,13 +50,14 @@ void display() {
     
 }
 
+//LETAK FUNGSI SESUAI TUGAS Masing-masing disini
+
 int main() {
 
     NodeAwal();
 
     cout << "Linked List Awal:\n";
     display();
-
 
 
     return 0;
