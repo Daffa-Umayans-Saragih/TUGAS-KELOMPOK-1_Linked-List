@@ -1,22 +1,15 @@
 #include <iostream>
 using namespace std;
 
-// =====================
-// Struktur Node
-// =====================
+
 struct Node {
     int data;
     Node *next;
 };
 
-// Pointer head (awal linked list)
+
 Node *first = NULL;
 
-
-
-// =====================
-// Inisialisasi 3 Node Awal
-// =====================
 void NodeAwal() {
     Node *node1 = new Node();
     Node *node2 = new Node();
@@ -34,9 +27,7 @@ void NodeAwal() {
     first = node1;
 }
 
-// =====================
-// Fungsi untuk menampilkan isi linked list
-// =====================
+
 
 void display() {
     Node *temp = first;
@@ -52,11 +43,11 @@ void display() {
 void addBeginning(int value) {
     Node *newNode = new Node();
     newNode->data = value;
-    newNode->next = first; // New node points to the current first node
-    first = newNode; // Update first to point to the new node
+    newNode->next = first; 
+    first = newNode; 
 }
 
-//LETAK FUNGSI SESUAI TUGAS Masing-masing disini
+
 
 int main() {
 
@@ -67,7 +58,7 @@ int main() {
 
     cout << "\nMenambahkan node baru di awal linked list...\n";
 
-    addBeginning(5); // Menambahkan node baru dengan nilai 5 di awal linked list
+    addBeginning(5); 
     cout << "\nLinked list Sekarang:\n";
     display();
 
