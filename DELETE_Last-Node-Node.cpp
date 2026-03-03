@@ -51,6 +51,41 @@ void display() {
 }
 
 //LETAK FUNGSI SESUAI TUGAS Masing-masing disini
+// =====================
+// Fungsi Delete Last Node
+// =====================
+void deleteLastNode() {
+    // Jika linked list kosong
+    if (first == NULL) {
+        cout << "Linked List kosong, tidak ada yang bisa dihapus.\n";
+        return;
+    }
+
+    // Jika hanya ada 1 node
+    if (first->next == NULL) {
+        delete first;
+        first = NULL;
+        cout << "Node terakhir berhasil dihapus.\n";
+        return;
+    }
+
+    // Jika lebih dari 1 node
+    Node *temp = first;
+    Node *prev = NULL;
+
+    // Mencari node terakhir
+    while (temp->next != NULL) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    // Putuskan node terakhir
+    prev->next = NULL;
+    delete temp;
+
+    cout << "Node terakhir berhasil dihapus.\n";
+}
+
 
 int main() {
 
@@ -59,6 +94,15 @@ int main() {
     cout << "Linked List Awal:\n";
     display();
 
+    char pilihan;
 
+    do {
+        deleteLastNode();
+        display();
+
+        cout << "Hapus lagi? (Y/N): ";
+        cin >> pilihan;
+
+    } while (pilihan == 'Y' || pilihan == 'y');
     return 0;
 }

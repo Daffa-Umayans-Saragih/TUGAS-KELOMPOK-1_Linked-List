@@ -51,6 +51,28 @@ void display() {
 }
 
 //LETAK FUNGSI SESUAI TUGAS Masing-masing disini
+// =====================
+// Fungsi Delete First Node
+// =====================
+void deleteFirstNode() {
+
+    // Jika linked list kosong
+    if (first == NULL) {
+        cout << "Linked List kosong, tidak ada yang bisa dihapus.\n";
+        return;
+    }
+
+    // Simpan node pertama sementara
+    Node *temp = first;
+
+    // Geser first ke node berikutnya
+    first = first->next;
+
+    // Hapus node lama
+    delete temp;
+
+    cout << "Node pertama berhasil dihapus.\n";
+}
 
 int main() {
 
@@ -59,6 +81,16 @@ int main() {
     cout << "Linked List Awal:\n";
     display();
 
+    char pilihan;
 
+    do {
+        deleteFirstNode();
+        display();
+
+        cout << "Hapus lagi? (Y/N): ";
+        cin >> pilihan;
+
+    } while (pilihan == 'Y' || pilihan == 'y');
+    
     return 0;
 }
