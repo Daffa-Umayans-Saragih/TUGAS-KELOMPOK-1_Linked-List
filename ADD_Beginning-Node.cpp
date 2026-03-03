@@ -49,6 +49,12 @@ void display() {
     }
     
 }
+void addBeginning(int value) {
+    Node *newNode = new Node();
+    newNode->data = value;
+    newNode->next = first; // New node points to the current first node
+    first = newNode; // Update first to point to the new node
+}
 
 //LETAK FUNGSI SESUAI TUGAS Masing-masing disini
 
@@ -59,6 +65,11 @@ int main() {
     cout << "Linked List Awal:\n";
     display();
 
+    cout << "\nMenambahkan node baru di awal linked list...\n";
+
+    addBeginning(5); // Menambahkan node baru dengan nilai 5 di awal linked list
+    cout << "\nLinked list Sekarang:\n";
+    display();
 
     return 0;
 }
