@@ -1,22 +1,13 @@
 #include <iostream>
 using namespace std;
 
-// =====================
-// Struktur Node
-// =====================
 struct Node {
     int data;
     Node *next;
 };
 
-// Pointer head (awal linked list)
 Node *first = NULL;
 
-
-
-// =====================
-// Inisialisasi 3 Node Awal
-// =====================
 void NodeAwal() {
     Node *node1 = new Node();
     Node *node2 = new Node();
@@ -34,9 +25,6 @@ void NodeAwal() {
     first = node1;
 }
 
-// =====================
-// Fungsi untuk menampilkan isi linked list
-// =====================
 
 void display() {
     Node *temp = first;
@@ -49,8 +37,6 @@ void display() {
     }
     
 }
-
-//LETAK FUNGSI SESUAI TUGAS Masing-masing disini
 
 int main() {
 
