@@ -1,22 +1,14 @@
 #include <iostream>
 using namespace std;
 
-// =====================
-// Struktur Node
-// =====================
 struct Node {
     int data;
     Node *next;
 };
 
-// Pointer head (awal linked list)
 Node *first = NULL;
 
 
-
-// =====================
-// Inisialisasi 3 Node Awal
-// =====================
 void NodeAwal() {
     Node *node1 = new Node();
     Node *node2 = new Node();
@@ -34,10 +26,6 @@ void NodeAwal() {
     first = node1;
 }
 
-// =====================
-// Fungsi untuk menampilkan isi linked list
-// =====================
-
 void display() {
     Node *temp = first;
 
@@ -50,25 +38,17 @@ void display() {
     
 }
 
-//LETAK FUNGSI SESUAI TUGAS Masing-masing disini
-// =====================
-// Fungsi Delete First Node
-// =====================
 void deleteFirstNode() {
 
-    // Jika linked list kosong
     if (first == NULL) {
         cout << "Linked List kosong, tidak ada yang bisa dihapus.\n";
         return;
     }
 
-    // Simpan node pertama sementara
     Node *temp = first;
 
-    // Geser first ke node berikutnya
     first = first->next;
 
-    // Hapus node lama
     delete temp;
 
     cout << "Node pertama berhasil dihapus.\n";
